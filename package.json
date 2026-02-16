@@ -1,6 +1,6 @@
 {
 	"name": "is-runtime",
-	"version": "0.0.0-development",
+	"version": "1.0.0",
 	"description": "Detect the current JavaScript runtime environment",
 	"license": "MIT",
 	"repository": "mstuart/is-runtime",
