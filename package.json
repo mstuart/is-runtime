@@ -1,0 +1,45 @@
+{
+	"name": "is-runtime",
+	"version": "0.0.0-development",
+	"description": "Detect the current JavaScript runtime environment",
+	"license": "MIT",
+	"repository": "mstuart/is-runtime",
+	"funding": "https://github.com/sponsors/mstuart",
+	"author": {
+		"name": "Mark Stuart",
+		"email": "mstuart@users.noreply.github.com",
+		"url": "https://github.com/mstuart"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"runtime",
+		"detect",
+		"node",
+		"bun",
+		"deno",
+		"cloudflare",
+		"workers",
+		"browser",
+		"environment"
+	],
+	"devDependencies": {
+		"ava": "^6.0.0",
+		"tsd": "^0.31.0",
+		"xo": "^0.60.0"
+	}
+}
