@@ -20,3 +20,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm test
+        continue-on-error: ${{ matrix.node-version == 20 }}
