@@ -33,7 +33,15 @@ Whether the current runtime is a browser.
 */
 export const isBrowser: boolean;
 
-export type Runtime = 'node' | 'bun' | 'deno' | 'browser' | 'cloudflare-workers' | 'service-worker' | 'edge-light' | 'unknown';
+export type Runtime =
+  | "node"
+  | "bun"
+  | "deno"
+  | "browser"
+  | "cloudflare-workers"
+  | "service-worker"
+  | "edge-light"
+  | "unknown";
 
 /**
 Detect the current JavaScript runtime environment.
