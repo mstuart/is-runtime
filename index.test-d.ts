@@ -1,14 +1,14 @@
-import {expectType, expectError} from 'tsd';
+import { expectError, expectType } from "tsd";
 import detectRuntime, {
-	type Runtime,
-	isBun,
-	isDeno,
-	isNode,
-	isEdgeLight,
-	isCloudflareWorkers,
-	isServiceWorker,
-	isBrowser,
-} from './index.js';
+  isBrowser,
+  isBun,
+  isCloudflareWorkers,
+  isDeno,
+  isEdgeLight,
+  isNode,
+  isServiceWorker,
+  type Runtime,
+} from "./index.js";
 
 expectType<Runtime>(detectRuntime());
 expectType<boolean>(isBun);
@@ -19,4 +19,4 @@ expectType<boolean>(isCloudflareWorkers);
 expectType<boolean>(isServiceWorker);
 expectType<boolean>(isBrowser);
 
-expectError(detectRuntime('arg'));
+expectError(detectRuntime("arg"));
