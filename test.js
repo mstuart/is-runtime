@@ -83,3 +83,20 @@ test("detectRuntime() is the default export", (t) => {
   t.is(typeof detectRuntime, "function");
   t.is(detectRuntime.length, 0);
 });
+
+test("does not identify a realm as a service worker from the constructor alone", async (t) => {
+  const original = globalThis.ServiceWorkerGlobalScope;
+  globalThis.ServiceWorkerGlobalScope = class ServiceWorkerGlobalScope {};
+
+  try {
+    const isolated = await import(`./index.js?test=${Date.now()}`);
+    t.false(isolated.isServiceWorker);
+    t.is(isolated.default(), "node");
+  } finally {
+    if (original === undefined) {
+      globalThis.ServiceWorkerGlobalScope = undefined;
+    } else {
+      globalThis.ServiceWorkerGlobalScope = original;
+    }
+  }
+});

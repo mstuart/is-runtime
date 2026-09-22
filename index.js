@@ -15,7 +15,8 @@ export const isCloudflareWorkers =
   globalThis.caches !== undefined && globalThis.HTMLRewriter !== undefined;
 
 export const isServiceWorker =
-  globalThis.ServiceWorkerGlobalScope !== undefined;
+  globalThis.ServiceWorkerGlobalScope !== undefined &&
+  globalThis instanceof globalThis.ServiceWorkerGlobalScope;
 
 export const isBrowser =
   // biome-ignore lint/suspicious/noUnnecessaryConditions: DOM globals vary by runtime despite their ambient types.
