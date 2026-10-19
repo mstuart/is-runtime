@@ -1,10 +1,9 @@
-import process from "node:process";
-
 export const isBun = globalThis.Bun !== undefined;
 
 export const isDeno = globalThis.Deno !== undefined;
 
-export const isNode = process.versions?.node !== undefined && !isBun && !isDeno;
+export const isNode =
+  globalThis.process?.versions?.node !== undefined && !isBun && !isDeno;
 
 export const isEdgeLight =
   globalThis.EdgeRuntime === undefined
